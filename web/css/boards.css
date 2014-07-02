@@ -1,0 +1,62 @@
+#boards{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.boardBackground{
+  position:absolute;
+  top:0;
+  background-image:url('../img/corkboardframe.jpg');
+  background-size:100% auto;
+  width:100%;
+  height:100%;
+}
+
+.rightBoardNav{
+  position:absolute;
+  top:0;
+  right:0;
+  width:150px;
+  height:100%;
+  z-index:100;
+  opacity: 0.4;
+  cursor:pointer;
+  -o-transition:opacity .2s ease-in;
+  -ms-transition:opacity .2s ease-in;
+  -moz-transition:opacity .2s ease-in;
+  -webkit-transition:opacity .2s ease-in;
+  transition:opacity .2s ease-in;
+}
+
+.leftBoardNav{
+  position:absolute;
+  top:0;
+  left:0;
+  width:150px;
+  height:100%;
+  z-index:100;
+  opacity: 0.4;
+  cursor:pointer;
+  -o-transition:opacity .2s ease-in;
+  -ms-transition:opacity .2s ease-in;
+  -moz-transition:opacity .2s ease-in;
+  -webkit-transition:opacity .2s ease-in;
+  transition:opacity .2s ease-in;
+}
+
+.rightBoardNav img, .leftBoardNav img{
+  height: 75px;
+  width: auto;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  margin: -37px 0px 0px -55px;
+  opacity:0.7;
+}
+
+.rightBoardNav:hover, .leftBoardNav:hover{
+  opacity: 1;
+}

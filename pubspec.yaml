@@ -1,0 +1,5 @@
+name: bugTracker
+description: A sample web application
+dependencies:
+  animation: any
+  browser: any
