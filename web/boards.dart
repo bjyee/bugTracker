@@ -39,6 +39,10 @@ void createBoard(List<String> boards){
   }
 }
 
+void appendNameToBoard(String name, int id){
+  
+}
+
 void setBodyWidth(){
   document.body.attributes = {"style" : "left:"+(window.screen.available.width).toString()+"px"};
 }
