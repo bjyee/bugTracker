@@ -3,13 +3,14 @@ import 'dart:convert' show JSON;
 import 'dart:async' show Future;
 
 import 'package:animation/animation.dart';
+import 'categories.dart';
 
 int currentBoard = 0;
 
 class Board {
   String name;
 
-  static List<String> names = [];
+  static List<String> boardnames = [];
   
   Board(this.name);
   
@@ -21,8 +22,8 @@ class Board {
   
   static List<String> _parseBoardsFromJSON(String jsonString){
       Map content = JSON.decode(jsonString);
-        names = content['boards'];
-        return names;
+      boardnames = content['boards'];
+        return boardnames;
     }
 }
 
@@ -34,13 +35,26 @@ void createBoard(List<String> boards){
       "data-board-id" : i.toString(),
       "style" : "left:"+(window.screen.available.width * i).toString()+"px"
     };
+    DivElement inner = new DivElement();
+    inner.attributes = {
+      "class" : "boardListings",
+      "data-sub-board-id" : i.toString(),
+    };
+    div.append(inner);
     querySelector("#boards").children.add(div);
     boardNav(i, boards.length);
+    appendNameToBoard(boards[i],i);
   }
 }
 
 void appendNameToBoard(String name, int id){
-  
+  DivElement div = new DivElement();
+  div.attributes = {
+     "class" : "boardTitle"
+  };
+  div.appendHtml(name);
+  var board = querySelector("*[data-board-id='"+id.toString()+"']");
+  board.append(div);
 }
 
 void setBodyWidth(){

@@ -1,5 +1,5 @@
 {
-  "boards" : ["Development", "QA","Production"],
+  "boards" : ["Development", "Quality Assurance","Production"],
   "categories" : ["Registration", "Login", "Password Recovery", "Username Recovery"],
   "bugs" : {
       "1" : {

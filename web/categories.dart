@@ -25,7 +25,15 @@ class Category{
 }
 
 void createCategories(List<String> categories){
-  
+  //create categories on all the boards.
+  var boards = querySelectorAll(".boardListings");
+  for(int i = 0; i < categories.length; i++){
+     DivElement div = new DivElement();
+     div.attributes = {
+       "class" : "categoriesZoomOut",
+       "data-category-id" : i.toString()
+     };
+  };
 }
 
 void animateSelection(){
@@ -41,7 +49,7 @@ void initCategories(){
       .then((value) {
         //on success
         createCategories(value);
-        reoganizeCategories();
+//        reoganizeCategories();
       })
       .catchError((error){
         print('Error initializing categories: $error');
